@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Ruby client for Apache DeviceMap}
   spec.description   = %q{Ruby client for Apache DeviceMap}
   spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.license       = "Apache-2.0"
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
