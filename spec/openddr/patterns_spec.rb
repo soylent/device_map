@@ -40,18 +40,6 @@ RSpec.describe DeviceMap::OpenDDR::Patterns do
       devices = patterns.find('anything')
       expect(devices).to be_empty
     end
-
-    it 'raises exception if builder class is unknown' do
-      openddr_builder_xml = generate_openddr_xml(
-        builder_class: 'unknown',
-        device_id: 'anything',
-        keywords: ['anything']
-      )
-
-      expect do
-        described_class.new(openddr_builder_xml.to_xml)
-      end.to raise_error(DeviceMap::OpenDDR::Builder::BuilderNotFound)
-    end
   end
 
   # rubocop:disable Metrics/MethodLength
