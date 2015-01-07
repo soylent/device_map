@@ -5,17 +5,40 @@ RSpec.describe DeviceMap::OpenDDR::Patterns do
     double(keywords_and_devices: [[keyword, device_id]])
   end
 
+  # FIXME: Bad specs
+  describe '.parse' do
+    before do
+      expect(DeviceMap::OpenDDR::Builder).to receive(:find) do
+        builder_stub('anything', 'anything')
+      end
+    end
+
+    it 'retuns instance of patterns class' do
+      openddr_builder = Nokogiri::XML::Builder.new do |xml|
+        xml.ODDR do
+          xml.Builders do
+            xml.builder
+          end
+        end
+      end
+
+      patterns = described_class.parse(openddr_builder.to_xml)
+      expect(patterns).to be_a(described_class)
+    end
+  end
+
   describe '#find' do
     it 'returns list of device ids for the given keyword' do
       device_id, keyword = 'iphone', 'ios'
-      builder = builder_stub(keyword, device_id)
-      patterns = described_class.new(builder)
+      builders = Array(builder_stub(keyword, device_id))
+      patterns = described_class.new(builders)
 
       expect(patterns.find(keyword)).to include device_id
     end
 
     it 'returns empty list if keyword is not found' do
-      patterns = described_class.new
+      builders = []
+      patterns = described_class.new(builders)
       devices = patterns.find('anything')
       expect(devices).to be_empty
     end

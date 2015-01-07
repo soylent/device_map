@@ -33,6 +33,8 @@ module DeviceMap
         def keywords_and_devices
           @builder_node.xpath('device').flat_map do |device_node|
             device_node.xpath('list/value').map do |keyword_node|
+              # NOTE: Return list of <tt>Pattern</tt> instances
+              # instead of tuples?
               [keyword_node.content, device_node[:id]]
             end
           end
