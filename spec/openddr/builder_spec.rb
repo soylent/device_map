@@ -35,8 +35,8 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
         described_class, builder_node_class)
     end
 
-    describe '#keywords_and_devices' do
-      it 'maps each keyword to device id' do
+    describe '#patterns' do
+      it 'maps single pattern object to each device keyword' do
         device_id, keywords = 'device', %w(keyword1 keyword2)
 
         builder_node = generate_builder_node(
@@ -46,8 +46,9 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
         )
 
         simple_builder = described_class.new(builder_node)
-        expected_result = keywords.product(Array(device_id))
-        expect(simple_builder.keywords_and_devices).to eq(expected_result)
+
+        patterns = simple_builder.patterns
+        expect(patterns.map(&:keyword)).to eq keywords
       end
     end
   end
@@ -58,8 +59,8 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
         described_class, builder_node_class)
     end
 
-    describe '#keywords_and_devices' do
-      it 'maps all keywords to the corresponding device id' do
+    describe '#patterns' do
+      it 'maps all device keywords to single pattern object' do
         device_id, keywords = 'device', %w(keyword1 keyword2)
 
         builder_node = generate_builder_node(
@@ -68,9 +69,9 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
           keywords: keywords
         )
 
-        simple_builder = described_class.new(builder_node)
-        expected_result = [keywords.join, device_id]
-        expect(simple_builder.keywords_and_devices).to include(expected_result)
+        two_step_builder = described_class.new(builder_node)
+        patterns = two_step_builder.patterns
+        expect(patterns.map(&:keyword)).to eq [keywords.join]
       end
     end
   end

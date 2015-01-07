@@ -26,30 +26,36 @@ module DeviceMap
       end
 
       class Simple
+        PRIORITY = 1
+
         def initialize(builder_node)
           @builder_node = builder_node
         end
 
-        def keywords_and_devices
+        def patterns
           @builder_node.xpath('device').flat_map do |device_node|
             device_node.xpath('list/value').map do |keyword_node|
-              # NOTE: Return list of <tt>Pattern</tt> instances
-              # instead of tuples?
-              [keyword_node.content, device_node[:id]]
+              keyword = keyword_node.content
+              device_id = device_node[:id]
+              Pattern.new(keyword, device_id, PRIORITY)
             end
           end
         end
       end
 
       class TwoStep
+        PRIORITY = 2
+
         def initialize(builder_node)
           @builder_node = builder_node
         end
 
-        def keywords_and_devices
+        def patterns
           @builder_node.xpath('device').map do |device_node|
             keyword_nodes = device_node.xpath('list/value')
-            [keyword_nodes.inner_text, device_node[:id]]
+            keyword = keyword_nodes.inner_text
+            device_id = device_node[:id]
+            Pattern.new(keyword, device_id, PRIORITY)
           end
         end
       end

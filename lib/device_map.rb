@@ -1,6 +1,7 @@
 require 'nokogiri'
 
 module DeviceMap
+  autoload :Pattern, 'device_map/pattern'
   autoload :UserAgent, 'device_map/user_agent'
   autoload :VERSION, 'device_map/version'
 

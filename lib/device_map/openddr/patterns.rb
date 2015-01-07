@@ -13,20 +13,19 @@ module DeviceMap
       end
 
       def initialize(builders)
-        @patterns = {}
+        @pattern_index = {}
 
         builders.each do |builder|
-          builder.keywords_and_devices.each do |args|
-            keyword, device_id = args
-            @patterns[keyword] ||= Set.new
-            @patterns[keyword] << device_id
+          builder.patterns.each do |pattern|
+            @pattern_index[pattern.keyword] ||= Set.new
+            @pattern_index[pattern.keyword] << pattern
           end
         end
       end
 
       def find(keyword)
         # TODO: Return copy of the set
-        @patterns.fetch(keyword) do
+        @pattern_index.fetch(keyword) do
           Set.new
         end
       end

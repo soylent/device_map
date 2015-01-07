@@ -2,7 +2,8 @@ require 'device_map'
 
 RSpec.describe DeviceMap::OpenDDR::Patterns do
   def builder_stub(keyword, device_id)
-    double(keywords_and_devices: [[keyword, device_id]])
+    pattern = DeviceMap::Pattern.new(keyword, device_id, 1)
+    double(patterns: Array(pattern))
   end
 
   # FIXME: Bad specs
@@ -33,7 +34,12 @@ RSpec.describe DeviceMap::OpenDDR::Patterns do
       builders = Array(builder_stub(keyword, device_id))
       patterns = described_class.new(builders)
 
-      expect(patterns.find(keyword)).to include device_id
+      search_results = patterns.find(keyword)
+      expect(search_results).not_to be_empty
+      search_results.each do |pattern|
+        expect(pattern.device_id).to eq device_id
+        expect(pattern.keyword).to eq keyword
+      end
     end
 
     it 'returns empty list if keyword is not found' do
