@@ -1,14 +1,15 @@
+require 'ostruct'
+
 module DeviceMap
   module OpenDDR
-    class Device
+    class Device < OpenStruct
       def self.parse(device_node)
-        new(id: device_node[:id])
-      end
+        properties = device_node.xpath('property')
+        attrs = properties.each_with_object({}) do |property, result|
+          result[property[:name]] = property[:value]
+        end
 
-      attr_reader :id
-
-      def initialize(attrs)
-        @id = attrs.fetch(:id)
+        new(attrs.merge(id: device_node[:id]))
       end
     end
   end
