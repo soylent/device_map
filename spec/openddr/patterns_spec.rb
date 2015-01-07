@@ -1,63 +1,23 @@
 require 'device_map'
 
 RSpec.describe DeviceMap::OpenDDR::Patterns do
+  def builder_stub(keyword, device_id)
+    double(keywords_and_devices: [[keyword, device_id]])
+  end
+
   describe '#find' do
     it 'returns list of device ids for the given keyword' do
-      device_id, keywords = 'iphone', %w(ios apple)
+      device_id, keyword = 'iphone', 'ios'
+      builder = builder_stub(keyword, device_id)
+      patterns = described_class.new(builder)
 
-      openddr_builder_xml = generate_openddr_xml(
-        builder_class: 'org.apache.devicemap.simpleddr.builder.device.DesktopOSDeviceBuilder',
-        device_id: device_id,
-        keywords: keywords
-      )
-
-      patterns = described_class.new(openddr_builder_xml.to_xml)
-
-      keywords.each do |keyword|
-        devices = patterns.find(keyword)
-        expect(devices).to include device_id
-      end
-    end
-
-    it 'asd' do
-      device_id, keywords = 'iphone', %w(ios apple)
-
-      openddr_builder_xml = generate_openddr_xml(
-        builder_class: 'org.apache.devicemap.simpleddr.builder.device.TwoStepDeviceBuilder',
-        device_id: device_id,
-        keywords: keywords
-      )
-
-      patterns = described_class.new(openddr_builder_xml.to_xml)
-      devices = patterns.find(keywords.join)
-
-      expect(devices).to include device_id
+      expect(patterns.find(keyword)).to include device_id
     end
 
     it 'returns empty list if keyword is not found' do
-      openddr_builder_xml = ''
-      patterns = described_class.new(openddr_builder_xml)
+      patterns = described_class.new
       devices = patterns.find('anything')
       expect(devices).to be_empty
-    end
-  end
-
-  # rubocop:disable Metrics/MethodLength
-  def generate_openddr_xml(builder_class:, device_id:, keywords:)
-    Nokogiri::XML::Builder.new do |xml|
-      xml.ODDR do
-        xml.Builders do
-          xml.builder(class: builder_class) do
-            xml.device(id: device_id) do
-              xml.list do
-                keywords.each do |keyword|
-                  xml.value_ keyword
-                end
-              end
-            end
-          end
-        end
-      end
     end
   end
 end
