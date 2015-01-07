@@ -5,7 +5,7 @@ module DeviceMap
     attr_reader :keyword, :device_id, :priority
 
     def initialize(keyword, device_id, priority)
-      @keyword = keyword
+      @keyword = Keyword.normalize(keyword)
       @device_id = device_id
       @priority = priority
     end
