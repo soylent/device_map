@@ -25,6 +25,7 @@ module DeviceMap
       end
 
       def find(keyword)
+        # TODO: Return copy of the set
         @patterns.fetch(keyword) do
           Set.new
         end
