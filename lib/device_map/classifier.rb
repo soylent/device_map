@@ -16,6 +16,7 @@ module DeviceMap
       @devices = OpenDDR::Devices.parse(File.open(DEVICE_DATA_SOURCE))
     end
 
+    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     def find_device(ua)
       user_agent = UserAgent.new(ua)
       keyword_ngrams = user_agent.ngrams(KEYWORD_NGRAM_SIZE)

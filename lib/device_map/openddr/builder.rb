@@ -50,6 +50,8 @@ module DeviceMap
       # Creates AND patterns with normal priority
       TWO_STEP_BUILDER = TwoStep.new(1)
 
+      # rubocop:disable Metrics/LineLength
+
       register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.DesktopOSDeviceBuilder'
       register GENERIC_BUILDER,  'org.apache.devicemap.simpleddr.builder.device.SimpleDeviceBuilder'
       register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.BotDeviceBuilder'
@@ -58,6 +60,8 @@ module DeviceMap
       register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.WinPhoneDeviceBuilder'
       register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.IOSDeviceBuilder'
       register TWO_STEP_BUILDER, 'org.apache.devicemap.simpleddr.builder.device.TwoStepDeviceBuilder'
+
+      # rubocop:enable Metrics/LineLength
     end
   end
 end

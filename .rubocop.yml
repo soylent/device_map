@@ -1,0 +1,8 @@
+Style/WordArray:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/AlignParameters:
+  Enabled: false
