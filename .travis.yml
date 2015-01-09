@@ -4,5 +4,4 @@ rvm:
   - 2.1
   - 2.2
   - rbx-2
-  - jruby
 before_install: bundle update --quiet
