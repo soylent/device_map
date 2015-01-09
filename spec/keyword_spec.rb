@@ -17,4 +17,16 @@ RSpec.describe DeviceMap::Keyword do
       expect(normalized_keywords).to eq ['blackberry']
     end
   end
+
+  describe '.join' do
+    example do
+      joined_keywords = described_class.join ['test', '123']
+      expect(joined_keywords).to eq 'test123'
+    end
+
+    example do
+      joined_keywords = described_class.join ['test', 'test123']
+      expect(joined_keywords).to eq 'test123'
+    end
+  end
 end

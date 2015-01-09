@@ -14,5 +14,24 @@ module DeviceMap
         keyword.downcase.gsub('[bb]', 'b').gsub(/[\W_]+/, '')
       end
     end
+
+    # Concatenate all keywords together and skip duplicates
+    def self.join(keywords)
+      # NOTE: This function handles the case when we want to concatenate all
+      # keywords without duplication.
+      #     <device id="BlackBerry 9700">
+      #         <list>
+      #             <value>blackberry</value>
+      #             <value>blackberry 9700</value>
+      #         </list>
+      #     </device>
+      normalize(keywords).reduce('') do |result, keyword|
+        if keyword.include?(result)
+          keyword
+        else
+          result.concat(keyword)
+        end
+      end
+    end
   end
 end
