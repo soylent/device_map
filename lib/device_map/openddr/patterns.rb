@@ -1,6 +1,7 @@
 module DeviceMap
   module OpenDDR
     class Patterns
+      # rubocop:disable Metrics/MethodLength
       def self.parse(openddr_builder_xml)
         builders_doc = Nokogiri::XML(openddr_builder_xml)
         openddr_builders = builders_doc.xpath('//builder')

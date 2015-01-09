@@ -55,8 +55,8 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
 
         expect(patterns.size).to eq 2
         pattern_keywords = patterns.flat_map(&:keywords)
-        expect(pattern_keywords).to include *keywords
-        expect(pattern_keywords).to include keywords.join
+        expect(pattern_keywords).to include(*keywords)
+        expect(pattern_keywords).to include(keywords.join)
       end
     end
   end
