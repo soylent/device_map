@@ -7,7 +7,7 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
     let(:fake_builder_class) do
       Class.new do
         def initialize(_); end
-        def keywords_and_devices; [] end
+        def patterns; [] end
       end
     end
 
