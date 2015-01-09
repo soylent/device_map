@@ -1,7 +1,15 @@
 require 'device_map'
 
 RSpec.describe DeviceMap::OpenDDR::Builder do
-  let(:builder_node_class) { 'fake_builder' }
+  let(:builder_node_class) { 'builder_node_class' }
+
+  let(:device_id) { 'device_id' }
+  let(:keywords) { ['keyword1', 'keyword2'] }
+
+  def builder
+    default_priority = 1
+    described_class.new(default_priority)
+  end
 
   describe '.find' do
     it 'returns builder object' do
@@ -27,8 +35,6 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
 
     describe '#patterns' do
       it 'maps single pattern object to each device keyword' do
-        device_id, keywords = 'device', %w(keyword1 keyword2)
-        builder = described_class.new(1)
         patterns = builder.patterns(device_id, keywords)
 
         expect(patterns.size).to eq keywords.size
@@ -45,8 +51,6 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
 
     describe '#patterns' do
       it 'maps all device keywords to single pattern object' do
-        device_id, keywords = 'device', %w(keyword1 keyword2)
-        builder = described_class.new(1)
         patterns = builder.patterns(device_id, keywords)
 
         expect(patterns.size).to eq 2
