@@ -2,24 +2,24 @@ module DeviceMap
   class Pattern
     include Comparable
 
-    attr_reader :keyword, :device_id, :priority
+    attr_reader :keywords, :device_id, :priority
 
-    def initialize(keyword, device_id, priority)
-      @keyword = Keyword.normalize(keyword)
+    def initialize(keywords, device_id, priority)
+      @keywords = Keyword.normalize(Array(keywords))
       @device_id = device_id
       @priority = priority
     end
 
     def <=>(other)
       if priority == other.priority
-        keyword.size <=> other.keyword.size
+        keywords.join.size <=> other.keywords.join.size
       else
         priority <=> other.priority
       end
     end
 
     def ==(other)
-      keyword == other.keyword &&
+      keywords == other.keywords &&
         device_id == other.device_id &&
         priority == other.priority
     end

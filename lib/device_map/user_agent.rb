@@ -5,13 +5,12 @@ module DeviceMap
     end
 
     def ngrams(size)
-      keywords = @user_agent.split(/[\s;\-_\/()\[\]\\]+/).map do |keyword|
-        Keyword.normalize(keyword)
-      end
+      keywords = @user_agent.split(/[\s;\-_\/()\[\]\\]+/)
+      normalized_keywords = Keyword.normalize(keywords)
 
-      keywords.flat_map.with_index do |keyword, i|
+      normalized_keywords.flat_map.with_index do |keyword, i|
         size.times.map do |j|
-          next_keywords = keywords[i + 1..-1] || []
+          next_keywords = normalized_keywords[i + 1..-1] || []
           Array(keyword).concat next_keywords.take(j)
         end
       end.uniq

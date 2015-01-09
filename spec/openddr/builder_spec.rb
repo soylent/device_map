@@ -46,9 +46,12 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
         )
 
         simple_builder = described_class.new(builder_node)
-
         patterns = simple_builder.patterns
-        expect(patterns.map(&:keyword)).to eq keywords
+
+        expect(patterns.size).to eq keywords.size
+
+        pattern_keywords = patterns.flat_map(&:keywords)
+        expect(pattern_keywords).to eq keywords
       end
     end
   end
@@ -71,7 +74,11 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
 
         two_step_builder = described_class.new(builder_node)
         patterns = two_step_builder.patterns
-        expect(patterns.map(&:keyword)).to eq [keywords.join]
+
+        expect(patterns.size).to eq 1
+
+        pattern_keywords = patterns.flat_map(&:keywords)
+        expect(pattern_keywords).to eq keywords
       end
     end
   end

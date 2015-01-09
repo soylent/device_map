@@ -44,7 +44,7 @@ module DeviceMap
       end
 
       class TwoStep
-        PRIORITY = 2
+        PRIORITY = 1
 
         def initialize(builder_node)
           @builder_node = builder_node
@@ -52,10 +52,9 @@ module DeviceMap
 
         def patterns
           @builder_node.xpath('device').map do |device_node|
-            keyword_nodes = device_node.xpath('list/value')
-            keyword = keyword_nodes.inner_text
+            keywords = device_node.xpath('list/value').map(&:content)
             device_id = device_node[:id]
-            Pattern.new(keyword, device_id, PRIORITY)
+            Pattern.new(keywords, device_id, PRIORITY)
           end
         end
       end

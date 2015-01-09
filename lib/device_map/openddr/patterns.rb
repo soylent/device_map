@@ -15,10 +15,13 @@ module DeviceMap
       def initialize(builders)
         @pattern_index = {}
 
+        # TODO: Demeter's law violation
         builders.each do |builder|
           builder.patterns.each do |pattern|
-            @pattern_index[pattern.keyword] ||= Set.new
-            @pattern_index[pattern.keyword] << pattern
+            pattern.keywords.each do |keyword|
+              @pattern_index[keyword] ||= Set.new
+              @pattern_index[keyword] << pattern
+            end
           end
         end
       end

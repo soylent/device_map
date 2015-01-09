@@ -29,7 +29,7 @@ RSpec.describe DeviceMap::OpenDDR::Patterns do
   end
 
   describe '#find' do
-    it 'returns list of device ids for the given keyword' do
+    it 'returns list of patterns for the given keyword' do
       device_id, keyword = 'iphone', 'ios'
       builders = Array(builder_stub(keyword, device_id))
       patterns = described_class.new(builders)
@@ -38,7 +38,7 @@ RSpec.describe DeviceMap::OpenDDR::Patterns do
       expect(search_results).not_to be_empty
       search_results.each do |pattern|
         expect(pattern.device_id).to eq device_id
-        expect(pattern.keyword).to eq keyword
+        expect(pattern.keywords).to include keyword
       end
     end
 
