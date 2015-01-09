@@ -3,18 +3,24 @@ require 'device_map'
 RSpec.describe DeviceMap::OpenDDR::Patterns do
   # FIXME: Bad specs
   describe '.parse' do
-    before do
-      expect(DeviceMap::OpenDDR::Builder).to receive(:find) do
-        pattern = DeviceMap::Pattern.new('anything', 'anything', 1)
-        double(patterns: Array(pattern))
-      end
-    end
-
     it 'retuns instance of patterns class' do
+      pattern = DeviceMap::Pattern.new('anything', 'anything', 1)
+      builder_stub = double(:builder, patterns: Array(pattern))
+
+      expect(DeviceMap::OpenDDR::Builder).to receive(:find) do
+        builder_stub
+      end
+
       openddr_builder = Nokogiri::XML::Builder.new do |xml|
         xml.ODDR do
           xml.Builders do
-            xml.builder
+            xml.builder do
+              xml.device do
+                xml.list do
+                  xml.value_ 'test'
+                end
+              end
+            end
           end
         end
       end
