@@ -41,14 +41,23 @@ module DeviceMap
         end
       end
 
-      register Simple.new(1),  'org.apache.devicemap.simpleddr.builder.device.DesktopOSDeviceBuilder'
-      register Simple.new(0),  'org.apache.devicemap.simpleddr.builder.device.SimpleDeviceBuilder'
-      register Simple.new(1),  'org.apache.devicemap.simpleddr.builder.device.BotDeviceBuilder'
-      register Simple.new(1),  'org.apache.devicemap.simpleddr.builder.device.AndroidDeviceBuilder'
-      register Simple.new(1),  'org.apache.devicemap.simpleddr.builder.device.SymbianDeviceBuilder'
-      register Simple.new(1),  'org.apache.devicemap.simpleddr.builder.device.WinPhoneDeviceBuilder'
-      register Simple.new(1),  'org.apache.devicemap.simpleddr.builder.device.IOSDeviceBuilder'
-      register TwoStep.new(1), 'org.apache.devicemap.simpleddr.builder.device.TwoStepDeviceBuilder'
+      # Creates OR patterns with normal priority
+      SIMPLE_BUILDER = Simple.new(1)
+
+      # Creates OR patterns with lower priority
+      GENERIC_BUILDER = Simple.new(0)
+
+      # Creates AND patterns with normal priority
+      TWO_STEP_BUILDER = TwoStep.new(1)
+
+      register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.DesktopOSDeviceBuilder'
+      register GENERIC_BUILDER,  'org.apache.devicemap.simpleddr.builder.device.SimpleDeviceBuilder'
+      register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.BotDeviceBuilder'
+      register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.AndroidDeviceBuilder'
+      register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.SymbianDeviceBuilder'
+      register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.WinPhoneDeviceBuilder'
+      register SIMPLE_BUILDER,   'org.apache.devicemap.simpleddr.builder.device.IOSDeviceBuilder'
+      register TWO_STEP_BUILDER, 'org.apache.devicemap.simpleddr.builder.device.TwoStepDeviceBuilder'
     end
   end
 end
