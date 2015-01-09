@@ -10,6 +10,11 @@ module DeviceMap
       @priority = priority
     end
 
+    def matches?(other_keywords)
+      diff = keywords - other_keywords
+      diff.empty?
+    end
+
     def <=>(other)
       if priority == other.priority
         keywords.join.size <=> other.keywords.join.size
