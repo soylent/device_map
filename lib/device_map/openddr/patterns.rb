@@ -5,23 +5,21 @@ module DeviceMap
         builders_doc = Nokogiri::XML(openddr_builder_xml)
         openddr_builders = builders_doc.xpath('//builder')
 
-        builders = openddr_builders.map do |builder_node|
-          Builder.find(builder_node)
+        all_patterns = openddr_builders.flat_map do |builder_node|
+          builder = Builder.find(builder_node)
+          builder.patterns
         end
 
-        new(builders)
+        new(all_patterns)
       end
 
-      def initialize(builders)
+      def initialize(all_patterns)
         @pattern_index = {}
 
-        # TODO: Demeter's law violation
-        builders.each do |builder|
-          builder.patterns.each do |pattern|
-            pattern.keywords.each do |keyword|
-              @pattern_index[keyword] ||= Set.new
-              @pattern_index[keyword] << pattern
-            end
+        all_patterns.each do |pattern|
+          pattern.keywords.each do |keyword|
+            @pattern_index[keyword] ||= Set.new
+            @pattern_index[keyword] << pattern
           end
         end
       end
