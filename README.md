@@ -15,7 +15,37 @@ Add `device_map` to your `Gemfile` and execute `bundle install`.
 
 ## Basic example
 
-TODO
+```ruby
+require 'device_map'
+
+user_agent = <<USERAGENT
+Mozilla/5.0 (Linux; U; Android 2.3.4; en-gb; GT-I9100 Build/GINGERBREAD)
+AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+USERAGENT
+
+device = DeviceMap.classify(user_agent)
+
+device.ajax_manipulate_css         # => true
+device.ajax_manipulate_dom         # => true
+device.ajax_support_event_listener # => true
+device.ajax_support_events         # => true
+device.ajax_support_getelementbyid # => true
+device.ajax_support_inner_html     # => true
+device.ajax_support_javascript     # => true
+device.device_os                   # => "Android"
+device.device_os_version           # => "2.3"
+device.display_height              # => 800
+device.display_width               # => 480
+device.dual_orientation            # => true
+device.from                        # => "open_db_modified"
+device.id                          # => "GT-I9100"
+device.image_inlining              # => true
+device.input_devices               # => "touchscreen"
+device.marketing_name              # => "Galaxy S II"
+device.mobile_browser              # => "Android Webkit"
+device.mobile_browser_version      # => "4.0"
+device.model                       # => "GT-I9100"
+```
 
 ## Contributing
 
