@@ -23,7 +23,6 @@ module DeviceMap
       property :is_desktop, type: :boolean
       property :is_tablet, type: :boolean
       property :is_wireless_device, type: :boolean
-      property :is_wireless_device, type: :boolean
       property :marketing_name, type: :string
       property :mobile_browser, type: :string
       property :mobile_browser_version, type: :string
