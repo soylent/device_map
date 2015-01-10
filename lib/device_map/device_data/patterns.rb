@@ -1,5 +1,5 @@
 module DeviceMap
-  module OpenDDR
+  module DeviceData
     class Patterns
       # rubocop:disable Metrics/MethodLength
       def self.parse(openddr_builder_xml)

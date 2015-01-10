@@ -1,5 +1,5 @@
 module DeviceMap
-  module OpenDDR
+  module DeviceData
     module Builder
       class BuilderNotFound < StandardError; end
 

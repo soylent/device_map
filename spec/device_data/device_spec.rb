@@ -1,6 +1,6 @@
 require 'device_map'
 
-RSpec.describe DeviceMap::OpenDDR::Device do
+RSpec.describe DeviceMap::DeviceData::Device do
   describe '.parse' do
     it 'returns new instance of this class' do
       properties = { id: 'iphone', vendor: 'Apple' }

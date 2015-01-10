@@ -1,6 +1,6 @@
 require 'device_map'
 
-RSpec.describe DeviceMap::OpenDDR::Builder do
+RSpec.describe DeviceMap::DeviceData::Builder do
   let(:builder_node_class) { 'builder_node_class' }
 
   let(:device_id) { 'device_id' }
@@ -24,13 +24,13 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
     it 'raises exception if builder node class is unknown' do
       expect do
         described_class.find('unknown')
-      end.to raise_error(DeviceMap::OpenDDR::Builder::BuilderNotFound)
+      end.to raise_error(DeviceMap::DeviceData::Builder::BuilderNotFound)
     end
   end
 
-  describe DeviceMap::OpenDDR::Builder::Simple do
+  describe DeviceMap::DeviceData::Builder::Simple do
     before do
-      DeviceMap::OpenDDR::Builder.register(described_class, builder_node_class)
+      DeviceMap::DeviceData::Builder.register(described_class, builder_node_class)
     end
 
     describe '#patterns' do
@@ -44,9 +44,9 @@ RSpec.describe DeviceMap::OpenDDR::Builder do
     end
   end
 
-  describe DeviceMap::OpenDDR::Builder::TwoStep do
+  describe DeviceMap::DeviceData::Builder::TwoStep do
     before do
-      DeviceMap::OpenDDR::Builder.register(described_class, builder_node_class)
+      DeviceMap::DeviceData::Builder.register(described_class, builder_node_class)
     end
 
     describe '#patterns' do
