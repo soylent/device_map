@@ -30,7 +30,8 @@ RSpec.describe DeviceMap::DeviceData::Builder do
 
   describe DeviceMap::DeviceData::Builder::Simple do
     before do
-      DeviceMap::DeviceData::Builder.register(described_class, builder_node_class)
+      DeviceMap::DeviceData::Builder.register(
+        described_class, builder_node_class)
     end
 
     describe '#patterns' do
@@ -46,7 +47,8 @@ RSpec.describe DeviceMap::DeviceData::Builder do
 
   describe DeviceMap::DeviceData::Builder::TwoStep do
     before do
-      DeviceMap::DeviceData::Builder.register(described_class, builder_node_class)
+      DeviceMap::DeviceData::Builder.register(
+        described_class, builder_node_class)
     end
 
     describe '#patterns' do
