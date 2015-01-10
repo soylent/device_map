@@ -14,6 +14,12 @@ module DeviceMap
     autoload :Patterns, 'device_map/device_data/patterns'
   end
 
+  module Properties
+    autoload :DSL, 'device_map/properties/dsl'
+    autoload :Property, 'device_map/properties/property'
+    autoload :Types, 'device_map/properties/types'
+  end
+
   RESOURCES_PATH = File.expand_path('resources', __dir__)
 
   def self.classify(user_agent)
