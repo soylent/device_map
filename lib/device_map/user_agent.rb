@@ -4,7 +4,7 @@ module DeviceMap
       @user_agent = user_agent
     end
 
-    def ngrams(size)
+    def keyword_ngrams(size)
       keywords = @user_agent.split(/[\s;\-_\/()\[\]\\]+/)
       normalized_keywords = Keyword.normalize(keywords)
 

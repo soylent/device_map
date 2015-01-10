@@ -19,7 +19,7 @@ module DeviceMap
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     def find_device(ua)
       user_agent = UserAgent.new(ua)
-      keyword_ngrams = user_agent.ngrams(KEYWORD_NGRAM_SIZE)
+      keyword_ngrams = user_agent.keyword_ngrams(KEYWORD_NGRAM_SIZE)
 
       search_hits = keyword_ngrams.each_with_object(Set.new) do |ngram, hits|
         hits.merge patterns.find(ngram.join)
