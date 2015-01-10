@@ -1,6 +1,6 @@
 require 'device_map'
 
-RSpec.describe DeviceMap::OpenDDR::Patterns do
+RSpec.describe DeviceMap::DeviceData::Patterns do
   let(:keyword) { 'keyword' }
 
   let(:pattern) do
@@ -11,7 +11,7 @@ RSpec.describe DeviceMap::OpenDDR::Patterns do
   describe '.parse' do
     it 'returns instance of patterns class' do
       builder_stub = double(:builder, patterns: Array(pattern))
-      expect(DeviceMap::OpenDDR::Builder).to receive(:find) { builder_stub }
+      expect(DeviceMap::DeviceData::Builder).to receive(:find) { builder_stub }
 
       openddr_builder = Nokogiri::XML::Builder.new do |xml|
         xml.ODDR do

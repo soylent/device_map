@@ -12,8 +12,8 @@ module DeviceMap
     attr_reader :patterns, :devices
 
     def initialize
-      @patterns = OpenDDR::Patterns.parse(File.open(BUILDER_DATA_SOURCE))
-      @devices = OpenDDR::Devices.parse(File.open(DEVICE_DATA_SOURCE))
+      @patterns = DeviceData::Patterns.parse(File.open(BUILDER_DATA_SOURCE))
+      @devices = DeviceData::Devices.parse(File.open(DEVICE_DATA_SOURCE))
     end
 
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
@@ -33,7 +33,7 @@ module DeviceMap
       if matched_pattern
         devices.find(matched_pattern.device_id)
       else
-        OpenDDR::Device.unknown
+        DeviceData::Device.unknown
       end
     end
   end

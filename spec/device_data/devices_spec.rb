@@ -1,6 +1,6 @@
 require 'device_map'
 
-RSpec.describe DeviceMap::OpenDDR::Devices do
+RSpec.describe DeviceMap::DeviceData::Devices do
   describe '#find' do
     it 'finds device by its id' do
       device_stub = double(id: 'device_id')
@@ -13,7 +13,7 @@ RSpec.describe DeviceMap::OpenDDR::Devices do
       devices = described_class.new([])
       expect do
         devices.find('anything')
-      end.to raise_error(DeviceMap::OpenDDR::Devices::DeviceNotFound)
+      end.to raise_error(DeviceMap::DeviceData::Devices::DeviceNotFound)
     end
   end
 

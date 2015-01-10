@@ -7,11 +7,11 @@ module DeviceMap
   autoload :UserAgent, 'device_map/user_agent'
   autoload :VERSION, 'device_map/version'
 
-  module OpenDDR
-    autoload :Builder, 'device_map/openddr/builder'
-    autoload :Device, 'device_map/openddr/device'
-    autoload :Devices, 'device_map/openddr/devices'
-    autoload :Patterns, 'device_map/openddr/patterns'
+  module DeviceData
+    autoload :Builder, 'device_map/device_data/builder'
+    autoload :Device, 'device_map/device_data/device'
+    autoload :Devices, 'device_map/device_data/devices'
+    autoload :Patterns, 'device_map/device_data/patterns'
   end
 
   RESOURCES_PATH = File.expand_path('resources', __dir__)

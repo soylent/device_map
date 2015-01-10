@@ -1,5 +1,5 @@
 module DeviceMap
-  module OpenDDR
+  module DeviceData
     class Devices
       class DeviceNotFound < StandardError; end
 

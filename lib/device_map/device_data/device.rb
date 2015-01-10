@@ -1,7 +1,7 @@
 require 'ostruct'
 
 module DeviceMap
-  module OpenDDR
+  module DeviceData
     class Device < OpenStruct
       UNKNOWN_ID = 'unknown'
 

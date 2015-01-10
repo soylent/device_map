@@ -9,7 +9,7 @@ RSpec.describe DeviceMap::Classifier do
     end
 
     let(:device) do
-      DeviceMap::OpenDDR::Device.new(id: 'device_id')
+      DeviceMap::DeviceData::Device.new(id: 'device_id')
     end
 
     context 'when device is found' do
@@ -37,7 +37,7 @@ RSpec.describe DeviceMap::Classifier do
 
       it 'returns unknown device object' do
         found_device = classifier.find_device(user_agent)
-        expect(found_device).to eq DeviceMap::OpenDDR::Device.unknown
+        expect(found_device).to eq DeviceMap::DeviceData::Device.unknown
       end
     end
   end
