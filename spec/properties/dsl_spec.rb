@@ -49,5 +49,13 @@ RSpec.describe DeviceMap::Properties::DSL do
 
       expect(model_instance1).to eq model_instance2
     end
+
+    it 'is not equal to other object if it has different properties' do
+      model.property :property
+      model_instance1 = model.new('property' => 'test1')
+      model_instance2 = model.new('property' => 'test2')
+
+      expect(model_instance1).not_to eq model_instance2
+    end
   end
 end
