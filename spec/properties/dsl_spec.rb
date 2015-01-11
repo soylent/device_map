@@ -3,7 +3,9 @@ require 'device_map'
 RSpec.describe DeviceMap::Properties::DSL do
   describe '.property' do
     let(:model) do
-      Class.new.include(described_class)
+      Class.new do
+        include DeviceMap::Properties::DSL
+      end
     end
 
     it 'defines class attribute' do
