@@ -1,3 +1,5 @@
+require 'set'
+
 module DeviceMap
   module DeviceData
     class Patterns
