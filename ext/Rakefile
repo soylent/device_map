@@ -1,0 +1,28 @@
+# This task runs during installation of the gem
+desc 'Prepare database dumps'
+task :prepare do
+  lib = File.expand_path('../lib', __dir__)
+  $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+  require 'device_map'
+
+  # TODO: Refactor
+
+  # Parse builder data and create inverted index
+  builder_xml = File.open(DeviceMap::BUILDER_DATA_SOURCE)
+  patterns = DeviceMap::DeviceData::Patterns.parse(builder_xml)
+
+  # Dump parsed builder data for later usage in <tt>DeviceMap::Classifier</tt>
+  patterns_dump = Marshal.dump(patterns)
+  File.write(DeviceMap::PATTERNS_DUMP, patterns_dump)
+
+  # Parse devices data
+  devices_xml = File.open(DeviceMap::DEVICE_DATA_SOURCE)
+  devices = DeviceMap::DeviceData::Devices.parse(devices_xml)
+
+  # Dump devices for later usage in <tt>DeviceMap::Classifier</tt>
+  devices_dump = Marshal.dump(devices)
+  File.write(DeviceMap::DEVICES_DUMP, devices_dump)
+end
+
+task default: :prepare
