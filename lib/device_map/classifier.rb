@@ -6,14 +6,12 @@ module DeviceMap
 
     KEYWORD_NGRAM_SIZE = 4
 
-    BUILDER_DATA_SOURCE = File.join(RESOURCES_PATH, 'BuilderDataSource.xml')
-    DEVICE_DATA_SOURCE = File.join(RESOURCES_PATH, 'DeviceDataSource.xml')
-
     attr_reader :patterns, :devices
 
     def initialize
-      @patterns = DeviceData::Patterns.parse(File.open(BUILDER_DATA_SOURCE))
-      @devices = DeviceData::Devices.parse(File.open(DEVICE_DATA_SOURCE))
+      # TODO: Refactor
+      @patterns = Marshal.load(File.open(PATTERNS_DUMP))
+      @devices = Marshal.load(File.open(DEVICES_DUMP))
     end
 
     # rubocop:disable Metrics/AbcSize, Metrics/MethodLength

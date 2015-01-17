@@ -2,6 +2,7 @@ lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'device_map/version'
 
+
 Gem::Specification.new do |spec|
   spec.name          = 'device_map'
   spec.version       = DeviceMap::VERSION
@@ -21,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(/^bin\//) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(/^spec\//)
   spec.require_paths = ['lib']
+  spec.extensions    = ['ext/Rakefile']
 
   spec.add_dependency 'nokogiri', '~> 1.6'
 

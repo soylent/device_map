@@ -22,6 +22,12 @@ module DeviceMap
 
   RESOURCES_PATH = File.expand_path('resources', __dir__)
 
+  BUILDER_DATA_SOURCE = File.join(RESOURCES_PATH, 'BuilderDataSource.xml')
+  DEVICE_DATA_SOURCE = File.join(RESOURCES_PATH, 'DeviceDataSource.xml')
+
+  PATTERNS_DUMP = File.join(RESOURCES_PATH, 'patterns')
+  DEVICES_DUMP = File.join(RESOURCES_PATH, 'devices')
+
   def self.classify(user_agent)
     classifier = Classifier.instance
     classifier.find_device(user_agent)
