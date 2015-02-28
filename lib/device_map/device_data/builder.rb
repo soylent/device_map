@@ -22,7 +22,7 @@ module DeviceMap
         end
       end
 
-      class Simple < Struct.new(:priority)
+      Simple = Struct.new(:priority) do
         def patterns(device_id, keywords)
           keywords.map do |keyword|
             Pattern.new(keyword, device_id, priority)
@@ -30,7 +30,7 @@ module DeviceMap
         end
       end
 
-      class TwoStep < Struct.new(:priority)
+      TwoStep = Struct.new(:priority) do
         def patterns(device_id, keywords)
           joined_keywords = Keyword.join(keywords)
 
