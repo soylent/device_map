@@ -16,11 +16,11 @@ RSpec.describe DeviceMap::Properties::DSL do
       expect(model_instance.property).to eq property_value
     end
 
-    it 'allows to change attribute name' do
-      property_value = 'test'
-      model.property :property, attr_name: :other_property
-      model_instance = model.new('property' => property_value)
-      expect(model_instance.other_property).to eq property_value
+    it 'allows to change source propery name' do
+      other_property_name, other_property_value = 'other_property', 'test'
+      model.property :property, source_name: other_property_name.to_sym
+      model_instance = model.new(other_property_name => other_property_value)
+      expect(model_instance.property).to eq other_property_value
     end
 
     it 'can cast property value to integer' do

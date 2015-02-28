@@ -4,9 +4,9 @@ module DeviceMap
 
     module DSL
       module ClassMethods
-        def property(name, type: :string, attr_name: name)
-          attr_reader attr_name
-          properties[name] = Property.new(name, type, attr_name)
+        def property(name, type: :string, source_name: name)
+          attr_reader name
+          properties[source_name] = Property.new(name, type, source_name)
         end
 
         # FIXME: This method should not be public
@@ -25,7 +25,7 @@ module DeviceMap
             fail UnknownProperty, "Property #{name} is not defined"
           end
 
-          attr_name = property.attr_name
+          attr_name = property.name
           casted_value = property.cast(value)
           instance_variable_set(:"@#{attr_name}", casted_value)
         end
@@ -33,7 +33,7 @@ module DeviceMap
 
       def ==(other)
         properties.all? do |_, property|
-          attr_name = property.attr_name
+          attr_name = property.name
           public_send(attr_name) == other.public_send(attr_name)
         end
       end
