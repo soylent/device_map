@@ -12,13 +12,13 @@ module DeviceMap
       property :ajax_support_javascript, type: :boolean
       property :device_os, type: :string
       property :device_os_version, type: :string
-      property :displayHeight, type: :integer, attr_name: :display_height
-      property :displayWidth, type: :integer, attr_name: :display_width
+      property :display_height, type: :integer, source_name: :displayHeight
+      property :display_width, type: :integer, source_name: :displayWidth
       property :dual_orientation, type: :boolean
       property :from, type: :string
       property :id, type: :string
       property :image_inlining, type: :boolean
-      property :inputDevices, type: :string, attr_name: :input_devices
+      property :input_devices, type: :string, source_name: :inputDevices
       property :is_bot, type: :boolean
       property :is_desktop, type: :boolean
       property :is_tablet, type: :boolean
@@ -30,7 +30,7 @@ module DeviceMap
       property :nokia_edition, type: :string
       property :nokia_series, type: :string
       property :pixel_density_ppi, type: :integer
-      property :'release-year', type: :integer, attr_name: :release_year
+      property :release_year, type: :integer, source_name: :'release-year'
       property :vendor, type: :string
       property :xhtml_format_as_attribute, type: :boolean
       property :xhtml_format_as_css_property, type: :boolean
