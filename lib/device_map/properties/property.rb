@@ -1,6 +1,6 @@
 module DeviceMap
   module Properties
-    class Property < Struct.new(:name, :type_name, :source_name)
+    Property = Struct.new(:name, :type_name, :source_name) do
       TYPE_MAPPING = {
         integer: Types::Integer,
         boolean: Types::Boolean,
