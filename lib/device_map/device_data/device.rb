@@ -29,6 +29,8 @@ module DeviceMap
       property :model, type: :string
       property :nokia_edition, type: :string
       property :nokia_series, type: :string
+      property :pixel_density_ppi, type: :integer
+      property :'release-year', type: :integer, attr_name: :release_year
       property :vendor, type: :string
       property :xhtml_format_as_attribute, type: :boolean
       property :xhtml_format_as_css_property, type: :boolean

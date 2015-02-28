@@ -1,4 +1,4 @@
 module DeviceMap
-  VERSION = '0.1.0'
-  DATA_VERSION = '1.0.1'
+  VERSION = '0.1.1'
+  DATA_VERSION = '1.0.2'
 end

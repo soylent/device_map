@@ -17,9 +17,9 @@
 -->
 <ODDR>
     <version>
-        <ver>1.0.1</ver>
-         <last_updated>2014-09-02 12:00:00</last_updated>
-        <official_url>http://incubator.apache.org/devicemap</official_url>
+        <ver>1.0.2</ver>
+         <last_updated>2015-02-05 18:41:31</last_updated>
+        <official_url>http://devicemap.apache.org</official_url>
         <statement>Licensed under http://www.apache.org/licenses/LICENSE-2.0</statement>
     </version>
     <Builders>
@@ -171,6 +171,35 @@
             <device id="SM-G900M">
                 <list>
                     <value>SM-G900M</value>
+                </list>
+            </device>
+            <device id="SM-G900">
+                <list>
+                    <value>SM-G900</value>
+                    <value>SM-G9006V</value>
+                    <value>SM-G9008V</value>
+                    <value>SM-G9009D</value>
+                    <value>SM-G9009W</value>
+                    <value>SM-G900A</value>
+                    <value>SM-G900AZ</value>
+                    <value>SM-G900F</value>
+                    <value>SM-G900FD</value>
+                    <value>SM-G900FQ</value>
+                    <value>SM-G900H</value>
+                    <value>SM-G900I</value>
+                    <value>SM-G900K</value>
+                    <value>SM-G900MD</value>
+                    <value>SM-G900P</value>
+                    <value>SM-G900R4</value>
+                    <value>SM-G900R6</value>
+                    <value>SM-G900R7</value>
+                    <value>SM-G900S</value>
+                    <value>SM-G900T1</value>
+                    <value>SM-G900V</value>
+                    <value>SM-G900W</value>
+                    <value>SM-G900W8</value>
+                    <value>SM-G900X</value>
+                    <value>SM-G901F</value>
                 </list>
             </device>
             <device id="HuaweiU8180">
@@ -680,7 +709,7 @@
             </device>
             <device id="SAMSUNG SM-P901">
                 <list>
-                    <value>SAMSUNG SM-P901</value>
+                    <value>SM-P901</value>
                 </list>
             </device>
             <device id="EK-GC200">
@@ -851,6 +880,34 @@
             <device id="XT1032">
                 <list>
                     <value>XT1032</value>
+                </list>
+            </device>
+            <device id="SM-N910">
+                <list>
+                    <value>SM-N910</value>
+                    <value>SM-N910A</value>
+                    <value>SM-N910C</value>
+                    <value>SM-N910D</value>
+                    <value>SM-N910F</value>
+                    <value>SM-N910G</value>
+                    <value>SM-N910H</value>
+                    <value>SM-N910J</value>
+                    <value>SM-N910K</value>
+                    <value>SM-N910L</value>
+                    <value>SM-N910P</value>
+                    <value>SM-N910R4</value>
+                    <value>SM-N910T</value>
+                    <value>SM-N910U</value>
+                    <value>SM-N910S</value>
+                    <value>SM-N910V</value>
+                    <value>SM-N910W8</value>
+                    <value>SM-N915F</value>
+                    <value>SM-N915S</value>
+                    <value>SM-N9106V</value>
+                    <value>SM-N9106W</value>
+                    <value>SM-N9108V</value>
+                    <value>SM-N9108W</value>
+                    <value>SM-N9109W</value>
                 </list>
             </device>
             <device id="SM-N9008V">
@@ -1348,6 +1405,16 @@
                     <value>Xperia Tablet Z LTE</value>
                 </list>
             </device>
+            <device id="SGP311">
+                <list>
+                    <value>SGP311</value>
+                </list>
+            </device>
+            <device id="SGP312">
+                <list>
+                    <value>SGP312</value>
+                </list>
+            </device>
             <device id="LG-P880">
                 <list>
                     <value>Optimus 4X HD</value>
@@ -1496,6 +1563,7 @@
             <device id="SM-P905">
                 <list>
                     <value>SM-P905</value>
+                    <value>SM-P905M</value>
                 </list>
             </device>
             <device id="LG-V507L">
@@ -1536,6 +1604,17 @@
             <device id="SM-P601">
                 <list>
                     <value>SM-P601</value>
+                </list>
+            </device>
+            <device id="SM-P602">
+                <list>
+                    <value>SM-P602</value>
+                </list>
+            </device>
+            <device id="SM-P607">
+                <list>
+                    <value>SM-P607</value>
+                    <value>SM-P607T</value>
                 </list>
             </device>
             <device id="SM-T217S">
@@ -1706,6 +1785,77 @@
             <device id="SM-T210">
                 <list>
                     <value>SM-T210</value>
+                </list>
+            </device>
+            <device id="SM-T212">
+                <list>
+                    <value>SM-T212</value>
+                </list>
+            </device>
+            <device id="SM-T312">
+                <list>
+                    <value>SM-T312</value>
+                </list>
+            </device>
+            <device id="SM-T230">
+                <list>
+                    <value>SM-T230</value>
+                    <value>SM-T230NU</value>
+                    <value>SM-T230NT</value>
+                    <value>SM-T231</value>
+                    <value>SM-T235</value>
+                    <value>SM-T235Y</value>
+                </list>
+            </device>
+            <device id="SM-T330">
+                <list>
+                    <value>SM-T330</value>
+                    <value>SM-T330NU</value>
+                    <value>SM-T331</value>
+                    <value>SM-T335</value>
+                    <value>SM-T337A</value>
+                    <value>SM-T337T</value>
+                    <value>SM-T337V</value>
+                </list>
+            </device>
+            <device id="SM-T530">
+                <list>
+                    <value>SM-T530</value>
+                    <value>SM-T530NU</value>
+                    <value>SM-T531</value>
+                    <value>SM-T535</value>
+                    <value>SM-T537A</value>
+                    <value>SM-T537V</value>
+                </list>
+            </device>
+            <device id="SM-T320">
+                <list>
+                    <value>SM-T320</value>
+                </list>
+            </device>
+            <device id="SM-T365">
+                <list>
+                    <value>SM-T365</value>
+                </list>
+            </device>
+            <device id="SM-T700">
+                <list>
+                    <value>SM-T700</value>
+                    <value>SM-T705</value>
+                    <value>SM-T705M</value>
+                    <value>SM-T705C</value>
+                    <value>SM-T705Y</value>
+                </list>
+            </device>
+            <device id="SM-T800">
+                <list>
+                    <value>SM-T800</value>
+                    <value>SM-T800X</value>
+                    <value>SM-T805</value>
+                    <value>SM-T805M</value>
+                    <value>SM-T805W</value>
+                    <value>SM-T805Y</value>
+                    <value>SM-T807P</value>
                 </list>
             </device>
             <device id="GT-N7108D">
@@ -2106,6 +2256,26 @@
             <device id="SM-C101">
                 <list>
                     <value>SM-C101</value>
+                </list>
+            </device>
+            <device id="SM-C105">
+                <list>
+                    <value>SM-C105</value>
+                    <value>SM-C105L</value>
+                    <value>SM-C105S</value>
+                </list>
+            </device>
+            <device id="SM-C111">
+                <list>
+                    <value>SM-C111</value>
+                    <value>SM-C111M</value>
+                </list>
+            </device>
+            <device id="SM-C115">
+                <list>
+                    <value>SM-C115</value>
+                    <value>SM-C115L</value>
+                    <value>SM-C115M</value>
                 </list>
             </device>
             <device id="SH-05E">
@@ -2591,6 +2761,11 @@
             <device id="LG-E977">
                 <list>
                     <value>LG-E977</value>
+                </list>
+            </device>
+            <device id="ME102">
+                <list>
+                    <value>K00F</value>
                 </list>
             </device>
             <device id="ME301T">
@@ -4133,6 +4308,11 @@
                     <value>Nexus 7</value>
                 </list>
             </device>
+            <device id="Nexus9">
+                <list>
+                    <value>Nexus 9</value>
+                </list>
+            </device>
             <device id="ST21i2">
                 <list>
                     <value>ST21i2</value>
@@ -4545,7 +4725,7 @@
             </device>
             <device id="DROID X2">
                 <list>
-                    <value>MB870</value>
+                    <value>DROID X2</value>
                 </list>
             </device>
             <device id="SonyEricssonLT22i">
