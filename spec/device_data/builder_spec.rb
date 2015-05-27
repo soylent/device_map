@@ -5,11 +5,7 @@ RSpec.describe DeviceMap::DeviceData::Builder do
 
   let(:device_id) { 'device_id' }
   let(:keywords) { ['keyword1', 'keyword2'] }
-
-  def builder
-    default_priority = 1
-    described_class.new(default_priority)
-  end
+  let(:default_priority) { 1 }
 
   describe '.find' do
     it 'returns builder object' do
@@ -36,6 +32,7 @@ RSpec.describe DeviceMap::DeviceData::Builder do
 
     describe '#patterns' do
       it 'maps single pattern object to each device keyword' do
+        builder = described_class.new(default_priority)
         patterns = builder.patterns(device_id, keywords)
 
         expect(patterns.size).to eq keywords.size
@@ -53,6 +50,7 @@ RSpec.describe DeviceMap::DeviceData::Builder do
 
     describe '#patterns' do
       it 'maps all device keywords to single pattern object' do
+        builder = described_class.new(default_priority)
         patterns = builder.patterns(device_id, keywords)
 
         expect(patterns.size).to eq 2
