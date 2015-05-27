@@ -34,10 +34,8 @@ module DeviceMap
       end
 
       def find(keyword)
-        # TODO: Return copy of the set
-        @pattern_index.fetch(keyword) do
-          Set.new
-        end
+        pattern_set = @pattern_index.fetch(keyword) { Set.new }
+        pattern_set.freeze
       end
     end
   end
