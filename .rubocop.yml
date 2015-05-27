@@ -6,3 +6,9 @@ Style/Documentation:
 
 Style/AlignParameters:
   Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
