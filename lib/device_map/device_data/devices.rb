@@ -19,7 +19,6 @@ module DeviceMap
       end
 
       def find(device_id)
-        # TODO: Return copy of <tt>Device</tt> object
         @device_index.fetch(device_id) do
           fail DeviceNotFound, "Cound not find device: #{device_id}"
         end
