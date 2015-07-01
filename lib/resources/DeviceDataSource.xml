@@ -17,8 +17,8 @@
 -->
 <ODDR>
     <version>
-        <ver>1.0.2</ver>
-        <last_updated>2015-02-05 18:41:31</last_updated>
+        <ver>1.0.3</ver>
+        <last_updated>2015-06-19 17:00:00</last_updated>
         <official_url>http://devicemap.apache.org</official_url>
         <statement>Licensed under http://www.apache.org/licenses/LICENSE-2.0</statement>
     </version>
@@ -5842,6 +5842,53 @@
         </device>
         <device id="genericFly" parentId="generic-">
             <property name="vendor" value="Fly"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+        </device>
+        <device id="flyiq245" parentId="genericFly">
+            <property name="model" value="IQ245"/>
+            <property name="marketing_name" value="Wizard"/>
+            <property name="displayWidth" value="320"/>
+            <property name="displayHeight" value="480"/>
+            <property name="pixel_density_ppi" value="165"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="flyiq256" parentId="flyiq245">
+            <property name="model" value="IQ256"/>
+            <property name="marketing_name" value="Vogue"/>
+        </device>
+        <device id="flyiq430" parentId="flyiq245">
+            <property name="model" value="IQ256"/>
+            <property name="marketing_name" value="Evoke"/>
+        </device>
+        <device id="flyiq440" parentId="genericFly">
+            <property name="model" value="IQ440"/>
+            <property name="marketing_name" value="Energie"/>
+            <property name="displayWidth" value="480"/>
+            <property name="displayHeight" value="800"/>
+            <property name="pixel_density_ppi" value="233"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="flyiq441" parentId="flyiq440">
+            <property name="model" value="IQ441"/>
+            <property name="marketing_name" value="Radiance"/>
+            <property name="pixel_density_ppi" value="217"/>
+        </device>
+        <device id="flyiq442" parentId="flyiq440">
+            <property name="model" value="IQ442"/>
+            <property name="marketing_name" value="Miracle"/>
+        </device>
+        <device id="flyiq445" parentId="flyiq440">
+            <property name="model" value="IQ445"/>
+            <property name="marketing_name" value="Genius"/>
         </device>
         <device id="BlackBerry8900" parentId="genericRIM">
             <property name="model" value="BlackBerry 8900"/>
@@ -42465,6 +42512,178 @@
             <property name="inputDevices" value="touchscreen"/>
             <property name="from" value="oddr"/>
         </device>
+        <device id="SM-G110" parentId="genericSamsung">
+            <property name="model" value="SM-G110"/>
+            <property name="marketing_name" value="Galaxy Pocket 2"/>
+            <property name="displayWidth" value="240"/>
+            <property name="displayHeight" value="320"/>
+            <property name="pixel_density_ppi" value="121"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.4.2"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G130" parentId="genericSamsung">
+            <property name="model" value="SM-G130"/>
+            <property name="marketing_name" value="Galaxy Young 2"/>
+            <property name="displayWidth" value="320"/>
+            <property name="displayHeight" value="480"/>
+            <property name="pixel_density_ppi" value="165"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.4.2"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G130E" parentId="SM-G130">
+            <property name="model" value="SM-G130E"/>
+            <property name="marketing_name" value="Galaxy Star 2"/>
+        </device>
+        <device id="SM-G310" parentId="genericSamsung">
+            <property name="model" value="SM-G310"/>
+            <property name="marketing_name" value="Galaxy Ace 4"/>
+            <property name="displayWidth" value="480"/>
+            <property name="displayHeight" value="800"/>
+            <property name="pixel_density_ppi" value="233"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.4.2"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G350" parentId="genericSamsung">
+            <property name="model" value="SM-G350"/>
+            <property name="marketing_name" value="Galaxy Core Plus"/>
+            <property name="displayWidth" value="480"/>
+            <property name="displayHeight" value="800"/>
+            <property name="pixel_density_ppi" value="217"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.2"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G3502" parentId="SM-G350">
+            <property name="model" value="SM-G3502"/>
+            <property name="marketing_name" value="Galaxy Trend 3"/>
+            <property name="device_os_version" value="4.3"/>
+        </device>
+        <device id="SM-G350E" parentId="SM-G350">
+            <property name="model" value="SM-G350E"/>
+            <property name="marketing_name" value="Galaxy Star Advance"/>
+            <property name="device_os_version" value="4.4.2"/>
+        </device>
+        <device id="SM-G3509" parentId="SM-G350">
+            <property name="model" value="SM-G3509"/>
+            <property name="device_os_version" value="4.1.2"/>
+        </device>
+        <device id="SM-G350H" parentId="SM-G350">
+            <property name="model" value="SM-G350H"/>
+            <property name="marketing_name" value="Galaxy Core 2"/>
+            <property name="device_os_version" value="4.4.2"/>
+        </device>
+        <device id="SM-G357FZ" parentId="SM-G350">
+            <property name="model" value="SM-G357FZ"/>
+            <property name="marketing_name" value="Galaxy Ace 4"/>
+            <property name="device_os_version" value="4.4.4"/>
+        </device>
+        <device id="SM-G3589W" parentId="SM-G350">
+            <property name="model" value="SM-G3589W"/>
+            <property name="marketing_name" value="Galaxy Core Lite"/>
+            <property name="device_os_version" value="4.3"/>
+        </device>
+        <device id="SM-G3812B" parentId="SM-G350">
+            <property name="model" value="SM-G3812B"/>
+            <property name="marketing_name" value="Galaxy S3 Slim"/>
+        </device>
+        <device id="SM-G3818" parentId="SM-G350">
+            <property name="model" value="SM-G3818"/>
+            <property name="marketing_name" value="Galaxy Win Pro"/>
+            <property name="displayWidth" value="540"/>
+            <property name="displayHeight" value="960"/>
+            <property name="pixel_density_ppi" value="245"/>
+        </device>
+        <device id="SM-G386F" parentId="SM-G350">
+            <property name="model" value="SM-G386F"/>
+            <property name="marketing_name" value="Galaxy Core LTE"/>
+            <property name="displayWidth" value="540"/>
+            <property name="displayHeight" value="960"/>
+            <property name="pixel_density_ppi" value="245"/>
+        </device>
+        <device id="SM-G386T" parentId="SM-G350">
+            <property name="model" value="SM-G386T"/>
+            <property name="marketing_name" value="Galaxy Avant"/>
+            <property name="displayWidth" value="540"/>
+            <property name="displayHeight" value="960"/>
+            <property name="pixel_density_ppi" value="245"/>
+        </device>
+        <device id="SM-G386W" parentId="SM-G386F">
+            <property name="model" value="SM-G386W"/>
+            <property name="device_os_version" value="4.4.2"/>
+        </device>
+        <device id="SM-G530" parentId="genericSamsung">
+            <property name="model" value="SM-G530"/>
+            <property name="marketing_name" value="Grand Prime"/>
+            <property name="displayWidth" value="540"/>
+            <property name="displayHeight" value="960"/>
+            <property name="pixel_density_ppi" value="220"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.4.4"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G530BT" parentId="SM-G530">
+            <property name="model" value="SM-G530BT"/>
+            <property name="marketing_name" value="Grand Prime Duos TV"/>
+            <property name="device_os_version" value="4.4.2"/>
+        </device>
         <device id="SM-G710S" parentId="genericSamsung">
             <property name="model" value="SM-G710S"/>
             <property name="marketing_name" value="Galaxy Grand 2"/>
@@ -42484,6 +42703,164 @@
             <property name="image_inlining" value="true"/>
             <property name="inputDevices" value="touchscreen"/>
             <property name="from" value="oddr"/>
+        </device>
+        <device id="SM-G710" parentId="genericSamsung">
+            <property name="model" value="SM-G710"/>
+            <property name="marketing_name" value="Galaxy Grand 2"/>
+            <property name="displayWidth" value="720"/>
+            <property name="displayHeight" value="1280"/>
+            <property name="pixel_density_ppi" value="280"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.3"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G7102" parentId="SM-G710">
+            <property name="model" value="SM-G7102"/>
+            <property name="marketing_name" value="Galaxy Grand 2 Duos"/>
+        </device>
+        <device id="SM-G7102T" parentId="SM-G710">
+            <property name="model" value="SM-G7102T"/>
+            <property name="marketing_name" value="Galaxy Grand 2 TV"/>
+        </device>
+        <device id="SM-G7105" parentId="SM-G710">
+            <property name="model" value="SM-G7105"/>
+            <property name="marketing_name" value="Galaxy Grand 2 LTE"/>
+        </device>
+        <device id="SM-G730W8" parentId="genericSamsung">
+            <property name="model" value="SM-G730W8"/>
+            <property name="marketing_name" value="Galaxy S3 Mini LTE"/>
+            <property name="displayWidth" value="480"/>
+            <property name="displayHeight" value="800"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.2.2"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G800F" parentId="genericSamsung">
+            <property name="model" value="SM-G800F"/>
+            <property name="marketing_name" value="Galaxy S5 Mini"/>
+            <property name="displayWidth" value="720"/>
+            <property name="displayHeight" value="1280"/>
+            <property name="pixel_density_ppi" value="326"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.4.2"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G870" parentId="genericSamsung">
+            <property name="model" value="SM-G870"/>
+            <property name="marketing_name" value="Galaxy S5 Active"/>
+            <property name="displayWidth" value="1080"/>
+            <property name="displayHeight" value="1920"/>
+            <property name="pixel_density_ppi" value="432"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.4.2"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G906L" parentId="genericSamsung">
+            <property name="model" value="SM-G906L"/>
+            <property name="marketing_name" value="Galaxy S5 LTE-A"/>
+            <property name="displayWidth" value="1440"/>
+            <property name="displayHeight" value="2560"/>
+            <property name="pixel_density_ppi" value="368"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.4.3"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-G910S" parentId="genericSamsung">
+            <property name="model" value="SM-G910S"/>
+            <property name="marketing_name" value="Galaxy Round"/>
+            <property name="displayWidth" value="1080"/>
+            <property name="displayHeight" value="1920"/>
+            <property name="pixel_density_ppi" value="386"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.3"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
+        </device>
+        <device id="SM-S801" parentId="genericSamsung">
+            <property name="model" value="SM-S801"/>
+            <property name="marketing_name" value="Galaxy Alpha"/>
+            <property name="displayWidth" value="720"/>
+            <property name="displayHeight" value="1280"/>
+            <property name="pixel_density_ppi" value="312"/>
+            <property name="mobile_browser" value="Android Webkit"/>
+            <property name="device_os" value="Android"/>
+            <property name="device_os_version" value="4.4.4"/>
+            <property name="dual_orientation" value="true"/>
+            <property name="ajax_support_javascript" value="true"/>
+            <property name="ajax_support_getelementbyid" value="true"/>
+            <property name="ajax_support_inner_html" value="true"/>
+            <property name="ajax_manipulate_dom" value="true"/>
+            <property name="ajax_manipulate_css" value="true"/>
+            <property name="ajax_support_events" value="true"/>
+            <property name="ajax_support_event_listener" value="true"/>
+            <property name="image_inlining" value="true"/>
+            <property name="inputDevices" value="touchscreen"/>
+            <property name="from" value="devicemap"/>
         </device>
         <device id="XT937C" parentId="genericMotorola">
             <property name="model" value="XT937C"/>
@@ -44763,26 +45140,6 @@
             <property name="mobile_browser" value="Android Webkit"/>
             <property name="device_os" value="Android"/>
             <property name="device_os_version" value="4.3"/>
-            <property name="inputDevices" value="touchscreen"/>
-            <property name="dual_orientation" value="true"/>
-            <property name="ajax_support_javascript" value="true"/>
-            <property name="ajax_support_getelementbyid" value="true"/>
-            <property name="ajax_support_inner_html" value="true"/>
-            <property name="ajax_manipulate_dom" value="true"/>
-            <property name="ajax_manipulate_css" value="true"/>
-            <property name="ajax_support_events" value="true"/>
-            <property name="ajax_support_event_listener" value="true"/>
-            <property name="image_inlining" value="true"/>
-            <property name="from" value="oddr"/>
-        </device>
-        <device id="SM-G386F" parentId="genericSamsung">
-            <property name="model" value="SM-G386F"/>
-            <property name="marketing_name" value="Galaxy Core LTE"/>
-            <property name="displayWidth" value="540"/>
-            <property name="displayHeight" value="960"/>
-            <property name="mobile_browser" value="Android Webkit"/>
-            <property name="device_os" value="Android"/>
-            <property name="device_os_version" value="4.2.2"/>
             <property name="inputDevices" value="touchscreen"/>
             <property name="dual_orientation" value="true"/>
             <property name="ajax_support_javascript" value="true"/>
