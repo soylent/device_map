@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'device_map'
 
 RSpec.describe DeviceMap::UserAgent do
@@ -7,7 +9,7 @@ RSpec.describe DeviceMap::UserAgent do
       ngrams = user_agent.keyword_ngrams(1)
 
       expect(ngrams.size).to eq 1
-      expect(ngrams).to include ['iphone']
+      expect(ngrams).to include %w[iphone]
     end
 
     example do
@@ -15,9 +17,9 @@ RSpec.describe DeviceMap::UserAgent do
       ngrams = user_agent.keyword_ngrams(2)
 
       expect(ngrams.size).to eq 3
-      expect(ngrams).to include ['iphone']
-      expect(ngrams).to include ['iphone', 'u']
-      expect(ngrams).to include ['u']
+      expect(ngrams).to include %w[iphone]
+      expect(ngrams).to include %w[iphone u]
+      expect(ngrams).to include %w[u]
     end
 
     example do
@@ -25,9 +27,9 @@ RSpec.describe DeviceMap::UserAgent do
       ngrams = user_agent.keyword_ngrams(3)
 
       expect(ngrams.size).to eq 3
-      expect(ngrams).to include ['mozilla']
-      expect(ngrams).to include ['mozilla', '50']
-      expect(ngrams).to include ['50']
+      expect(ngrams).to include %w[mozilla]
+      expect(ngrams).to include %w[mozilla 50]
+      expect(ngrams).to include %w[50]
     end
 
     example do
@@ -35,12 +37,12 @@ RSpec.describe DeviceMap::UserAgent do
       ngrams = user_agent.keyword_ngrams(3)
 
       expect(ngrams.size).to eq 6
-      expect(ngrams).to include ['mozilla']
-      expect(ngrams).to include ['mozilla', '50']
-      expect(ngrams).to include ['mozilla', '50', 'iphone']
-      expect(ngrams).to include ['50']
-      expect(ngrams).to include ['50', 'iphone']
-      expect(ngrams).to include ['iphone']
+      expect(ngrams).to include %w[mozilla]
+      expect(ngrams).to include %w[mozilla 50]
+      expect(ngrams).to include %w[mozilla 50 iphone]
+      expect(ngrams).to include %w[50]
+      expect(ngrams).to include %w[50 iphone]
+      expect(ngrams).to include %w[iphone]
     end
   end
 end

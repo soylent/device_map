@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DeviceMap
   module Properties
     # Property types
@@ -24,7 +26,7 @@ module DeviceMap
           case value
           when 'true' then true
           when 'false' then false
-          else fail ArgumentError, "Cannot cast #{value} to boolean"
+          else raise ArgumentError, "Cannot cast #{value} to boolean"
           end
         end
       end

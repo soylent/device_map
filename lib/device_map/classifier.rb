@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'singleton'
 
 module DeviceMap
@@ -24,10 +26,10 @@ module DeviceMap
 
     # Classifies a given user agent
     #
-    # @param ua [String] user agent
+    # @param user_agent [String] user agent string
     # @return [DeviceMap::DeviceData::Device] detected device
-    def find_device(ua) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
-      user_agent = UserAgent.new(ua)
+    def find_device(user_agent)
+      user_agent = UserAgent.new(user_agent)
       keyword_ngrams = user_agent.keyword_ngrams(KEYWORD_NGRAM_SIZE)
 
       search_hits = keyword_ngrams.each_with_object(Set.new) do |ngram, hits|

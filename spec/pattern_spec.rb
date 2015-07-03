@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'device_map'
 
 RSpec.describe DeviceMap::Pattern do
@@ -35,7 +37,7 @@ RSpec.describe DeviceMap::Pattern do
       described_class.new(keyword, device_id, priority)
     end
 
-    let(:other_keywords) { ['anything', 'else'] }
+    let(:other_keywords) { %w[anything else] }
 
     it 'returns true if given keywords contain all pattern keywords' do
       given_keywords = other_keywords + pattern.keywords

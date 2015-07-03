@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'device_map'
 
 RSpec.describe DeviceMap::DeviceData::Builder do
   let(:builder_node_class) { 'builder_node_class' }
 
   let(:device_id) { 'device_id' }
-  let(:keywords) { ['keyword1', 'keyword2'] }
+  let(:keywords) { %w[keyword1 keyword2] }
   let(:default_priority) { 1 }
 
   describe '.find' do
@@ -27,7 +29,8 @@ RSpec.describe DeviceMap::DeviceData::Builder do
   describe DeviceMap::DeviceData::Builder::Simple do
     before do
       DeviceMap::DeviceData::Builder.register(
-        described_class, builder_node_class)
+        described_class, builder_node_class
+      )
     end
 
     describe '#patterns' do
@@ -45,7 +48,8 @@ RSpec.describe DeviceMap::DeviceData::Builder do
   describe DeviceMap::DeviceData::Builder::TwoStep do
     before do
       DeviceMap::DeviceData::Builder.register(
-        described_class, builder_node_class)
+        described_class, builder_node_class
+      )
     end
 
     describe '#patterns' do

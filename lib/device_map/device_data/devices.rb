@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DeviceMap
   module DeviceData
     # Device database
@@ -32,7 +34,7 @@ module DeviceMap
       # @return [DeviceMap::DeviceData::Device]
       def find(device_id)
         @device_index.fetch(device_id) do
-          fail DeviceNotFound, "Cound not find device: #{device_id}"
+          raise DeviceNotFound, "Cound not find device: #{device_id}"
         end
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DeviceMap
   module Properties
     # Raises when an unknown device property is set
@@ -34,7 +36,7 @@ module DeviceMap
       def initialize(attrs)
         attrs.each do |name, value|
           property = properties.fetch(name.to_sym) do
-            fail UnknownProperty, "Property #{name} is not defined"
+            raise UnknownProperty, "Property #{name} is not defined"
           end
 
           attr_name = property.name

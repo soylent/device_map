@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 
 RSpec::Core::RakeTask.new(:spec)
-RuboCop::RakeTask.new
+RuboCop::RakeTask.new(:rubocop) do |task|
+  task.options.push('--fail-level', 'convention')
+end
 
 load 'ext/Rakefile'
 

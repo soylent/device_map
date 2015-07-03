@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 module DeviceMap
+  # Device properties
   module Properties
     TYPE_MAPPING = {
       integer: Types::Integer,
       boolean: Types::Boolean,
       string:  Types::String
-    }
+    }.freeze
 
     private_constant :TYPE_MAPPING
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'device_map'
 
 RSpec.describe DeviceMap::Properties::DSL do
@@ -17,7 +19,8 @@ RSpec.describe DeviceMap::Properties::DSL do
     end
 
     it 'allows to change source propery name' do
-      other_property_name, other_property_value = 'other_property', 'test'
+      other_property_name = 'other_property'
+      other_property_value = 'test'
       model.property :property, source_name: other_property_name.to_sym
       model_instance = model.new(other_property_name => other_property_value)
       expect(model_instance.property).to eq other_property_value

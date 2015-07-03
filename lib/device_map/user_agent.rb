@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DeviceMap
   # User agent
   #
@@ -13,11 +15,11 @@ module DeviceMap
     # @param size [Integer] max n-gram size
     # @return [Array<Array<String>>>] n-grams
     def keyword_ngrams(size)
-      keywords = @user_agent.split(/[\s;\-_\/()\[\]\\]+/)
+      keywords = @user_agent.split(%r{[\s;\-_\/()\[\]\\]+})
       normalized_keywords = Keyword.normalize(keywords)
 
       normalized_keywords.flat_map.with_index do |keyword, i|
-        size.times.map do |j|
+        Array.new(size) do |j|
           next_keywords = normalized_keywords[i + 1..-1] || []
           Array(keyword).concat next_keywords.take(j)
         end

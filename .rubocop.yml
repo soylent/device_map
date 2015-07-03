@@ -1,14 +1,16 @@
-Style/WordArray:
-  Enabled: false
+---
 
-Style/Documentation:
+AllCops:
+  TargetRubyVersion: 2.3
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+Security/MarshalLoad:
   Enabled: false
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+Metrics/AbcSize:
+  Severity: refactor
+Metrics/MethodLength:
+  Severity: refactor
 
-Style/AlignParameters:
-  Enabled: false
-
-Style/ParallelAssignment:
-  Enabled: false
-
-Style/RegexpLiteral:
-  Enabled: false

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DeviceMap
   module DeviceData
     # Pattern builders
@@ -12,8 +14,8 @@ module DeviceMap
       # @return [SIMPLE_BUILDER, GENERIC_BUILDER, TWO_STEP_BUILDER] builder
       def self.find(builder_node_class)
         builders.fetch(builder_node_class) do
-          fail BuilderNotFound,
-            "Could not find builder for #{builder_node_class}"
+          raise BuilderNotFound,
+                "Could not find builder for #{builder_node_class}"
         end
       end
 

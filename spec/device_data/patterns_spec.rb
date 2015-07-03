@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'device_map'
 
 RSpec.describe DeviceMap::DeviceData::Patterns do
