@@ -1,9 +1,16 @@
 module DeviceMap
   module DeviceData
+    # Pattern builders
     module Builder
+      # Raises when a builder for a given builder node class is not found
       class BuilderNotFound < StandardError; end
 
       class << self
+        # Find a builder for a given builder node class
+        #
+        # @raise [BuilderNotFound] if the builder is not found
+        # @param builder_node_class [String] builder node class
+        # @return [SIMPLE_BUILDER, GENERIC_BUILDER, TWO_STEP_BUILDER] builder
         def find(builder_node_class)
           builders.fetch(builder_node_class) do
             fail BuilderNotFound,
@@ -11,6 +18,12 @@ module DeviceMap
           end
         end
 
+        # Associate a builder with a given builder node class
+        #
+        # @param klass [SIMPLE_BUILDER, GENERIC_BUILDER, TWO_STEP_BUILDER]
+        #   builder
+        # @param builder_class [String] builder node class
+        # @return [void]
         def register(klass, builder_class)
           builders[builder_class] = klass
         end
@@ -22,7 +35,16 @@ module DeviceMap
         end
       end
 
+      # Creates OR patterns
       Simple = Struct.new(:priority) do
+        # @!attribute priority
+        #   @return [Comparable] pattern priority
+
+        # Returns a list of patterns for a given device and a list of keywords
+        #
+        # @param device_id [String] device id
+        # @param keywords [Array<String>] list of keywords
+        # @return [Array<DeviceMap::Pattern>] list of patterns
         def patterns(device_id, keywords)
           keywords.map do |keyword|
             Pattern.new(keyword, device_id, priority)
@@ -30,7 +52,16 @@ module DeviceMap
         end
       end
 
+      # Creates AND patterns
       TwoStep = Struct.new(:priority) do
+        # @!attribute priority
+        #   @return [Comparable] pattern priority
+
+        # Returns a list of patterns for a given device and a list of keywords
+        #
+        # @param device_id [String] device id
+        # @param keywords [Array<String>] list of keywords
+        # @return [Array<DeviceMap::Pattern>] list of patterns
         def patterns(device_id, keywords)
           joined_keywords = Keyword.join(keywords)
 
@@ -44,7 +75,7 @@ module DeviceMap
       # Creates OR patterns with normal priority
       SIMPLE_BUILDER = Simple.new(1)
 
-      # Creates OR patterns with lower priority
+      # Creates OR patterns with low priority
       GENERIC_BUILDER = Simple.new(0)
 
       # Creates AND patterns with normal priority

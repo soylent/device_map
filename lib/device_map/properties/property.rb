@@ -1,12 +1,19 @@
 module DeviceMap
   module Properties
-    Property = Struct.new(:name, :type_name, :source_name) do
-      TYPE_MAPPING = {
-        integer: Types::Integer,
-        boolean: Types::Boolean,
-        string:  Types::String
-      }
+    TYPE_MAPPING = {
+      integer: Types::Integer,
+      boolean: Types::Boolean,
+      string:  Types::String
+    }
 
+    private_constant :TYPE_MAPPING
+
+    # Property type
+    Property = Struct.new(:name, :type_name, :source_name) do
+      # Converts a given value to appropriate type
+      #
+      # @param value [Object] original value
+      # @return [Object] converted value
       def cast(value)
         return if value.nil?
 

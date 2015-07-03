@@ -1,6 +1,12 @@
 module DeviceMap
+  # User agent keywords
+  #
+  # @api private
   module Keyword
-    # Deletes all non-alphanumeric characters from the given keywords
+    # Deletes all non-alphanumeric characters from given keywords
+    #
+    # @param keywords [Array<String>] keywords
+    # @return [Array<String>] normalized keywords
     def self.normalize(keywords)
       keywords.map do |keyword|
         # NOTE: <tt>BUILDER_DATA_SOURCE</tt> contains keywords like:
@@ -15,7 +21,10 @@ module DeviceMap
       end
     end
 
-    # Concatenate all keywords together and skip duplicates
+    # Joins all keywords together and skips duplicates
+    #
+    # @param keywords [Array<String>] keywords
+    # @return [String] joined keywords
     def self.join(keywords)
       # NOTE: This function handles the case when we want to concatenate all
       # keywords without duplication.

@@ -2,9 +2,13 @@ require 'set'
 
 module DeviceMap
   module DeviceData
+    # User agent classification patterns
     class Patterns
-      # rubocop:disable Metrics/MethodLength
-      def self.parse(openddr_builder_xml)
+      # Parses OpenDDR builder XML
+      #
+      # @param openddr_builder_xml [String] XML
+      # @return [DeviceMap::DeviceData::Patterns]
+      def self.parse(openddr_builder_xml) # rubocop:disable Metrics/MethodLength
         builders_doc = Nokogiri::XML(openddr_builder_xml)
         openddr_builders = builders_doc.xpath('//builder')
 
@@ -22,6 +26,7 @@ module DeviceMap
         new(all_patterns)
       end
 
+      # @param all_patterns [DeviceMap::Pattern] a list of patterns
       def initialize(all_patterns)
         @pattern_index = {}
 
@@ -33,6 +38,10 @@ module DeviceMap
         end
       end
 
+      # Return all patterns for a given keyword
+      #
+      # @param keyword [String] keyword
+      # @return [Set<DeviceMap::DeviceData::Pattern>] a set of patterns
       def find(keyword)
         pattern_set = @pattern_index.fetch(keyword) { Set.new }
         pattern_set.freeze

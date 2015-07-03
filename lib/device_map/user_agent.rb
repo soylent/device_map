@@ -1,9 +1,17 @@
 module DeviceMap
+  # User agent
+  #
+  # @api private
   class UserAgent
+    # @param user_agent [String] user agent
     def initialize(user_agent)
       @user_agent = user_agent
     end
 
+    # Returns a list of n-grams up to a given size
+    #
+    # @param size [Integer] max n-gram size
+    # @return [Array<Array<String>>>] n-grams
     def keyword_ngrams(size)
       keywords = @user_agent.split(/[\s;\-_\/()\[\]\\]+/)
       normalized_keywords = Keyword.normalize(keywords)
