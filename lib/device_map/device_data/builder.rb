@@ -5,35 +5,33 @@ module DeviceMap
       # Raises when a builder for a given builder node class is not found
       class BuilderNotFound < StandardError; end
 
-      class << self
-        # Find a builder for a given builder node class
-        #
-        # @raise [BuilderNotFound] if the builder is not found
-        # @param builder_node_class [String] builder node class
-        # @return [SIMPLE_BUILDER, GENERIC_BUILDER, TWO_STEP_BUILDER] builder
-        def find(builder_node_class)
-          builders.fetch(builder_node_class) do
-            fail BuilderNotFound,
-              "Could not find builder for #{builder_node_class}"
-          end
-        end
-
-        # Associate a builder with a given builder node class
-        #
-        # @param klass [SIMPLE_BUILDER, GENERIC_BUILDER, TWO_STEP_BUILDER]
-        #   builder
-        # @param builder_class [String] builder node class
-        # @return [void]
-        def register(klass, builder_class)
-          builders[builder_class] = klass
-        end
-
-        private
-
-        def builders
-          @builders ||= {}
+      # Find a builder for a given builder node class
+      #
+      # @raise [BuilderNotFound] if the builder is not found
+      # @param builder_node_class [String] builder node class
+      # @return [SIMPLE_BUILDER, GENERIC_BUILDER, TWO_STEP_BUILDER] builder
+      def self.find(builder_node_class)
+        builders.fetch(builder_node_class) do
+          fail BuilderNotFound,
+            "Could not find builder for #{builder_node_class}"
         end
       end
+
+      # Associate a builder with a given builder node class
+      #
+      # @param klass [SIMPLE_BUILDER, GENERIC_BUILDER, TWO_STEP_BUILDER]
+      #   builder
+      # @param builder_class [String] builder node class
+      # @return [void]
+      def self.register(klass, builder_class)
+        builders[builder_class] = klass
+      end
+
+      def self.builders
+        @builders ||= {}
+      end
+
+      private_class_method :builders
 
       # Creates OR patterns
       Simple = Struct.new(:priority) do
