@@ -8,21 +8,19 @@ task :prepare do
 
   require 'device_map'
 
-  # TODO: Refactor
-
   # Parse builder data and create inverted index
   builder_xml = File.open(DeviceMap::BUILDER_DATA_SOURCE)
   patterns = DeviceMap::DeviceData::Patterns.parse(builder_xml)
 
-  # Dump parsed builder data for later usage in <tt>DeviceMap::Classifier</tt>
+  # Dump parsed builder data for later use in `DeviceMap::Classifier`
   patterns_dump = Marshal.dump(patterns)
   File.write(DeviceMap::PATTERNS_DUMP, patterns_dump)
 
-  # Parse devices data
+  # Parse device data
   devices_xml = File.open(DeviceMap::DEVICE_DATA_SOURCE)
   devices = DeviceMap::DeviceData::Devices.parse(devices_xml)
 
-  # Dump devices for later usage in <tt>DeviceMap::Classifier</tt>
+  # Dump devices for later use in `DeviceMap::Classifier`
   devices_dump = Marshal.dump(devices)
   File.write(DeviceMap::DEVICES_DUMP, devices_dump)
 end
