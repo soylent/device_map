@@ -13,15 +13,14 @@ devices, e.g. smartphones and tablets.
 
 Add `device_map` to your `Gemfile` and execute `bundle install`.
 
-## Basic example
+## Example
 
 ```ruby
 require 'device_map'
 
-user_agent = <<USERAGENT
-Mozilla/5.0 (Linux; U; Android 2.3.4; en-gb; GT-I9100 Build/GINGERBREAD)
-AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
-USERAGENT
+user_agent =
+  'Mozilla/5.0 (Linux; U; Android 4.2.2; En-us; SM-T312 Build/JDQ39) ' \
+  'AppleWebKit/534.30 (KHTML, Like Gecko) Version/4.0 Safari/534.30'
 
 device = DeviceMap.classify(user_agent)
 
@@ -49,8 +48,9 @@ device.model                       # => "GT-I9100"
 
 ## Contributing
 
-Pull requests are very welcome. Please make sure that your changes
-don't break the tests by running:
+Pull requests are very welcome!
+
+Please make sure that your changes don't break the tests by running:
 
 ```sh
 $ bundle exec rake
